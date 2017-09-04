@@ -1,0 +1,120 @@
+body{
+    width: 800px;
+    margin: 0px auto;
+    font-family: Arial;
+}
+
+.cc-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #6CB9D0;
+}
+.cc-wrapper__title{
+    align-self: center;
+    color: white;
+    text-align: center;
+}
+.cc-wrapper__sections{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    
+}
+.cc-wrapper__sections__data{
+    position: relative;
+}
+.cc-wrapper__sections__data__select{
+    height: 34px;
+    width: 55px;
+    border-radius: 5px;
+    border: 1px solid #378DA8;
+    padding-left: 3px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 1;
+    background: url('../img/btn_downarrow.gif') no-repeat right white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.cc-wrapper__sections__data__input{
+    height: 30px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #378DA8;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+.cc-wrapper__sections__data__input.ng-invalid{
+  color: red;
+}
+.cc-wrapper__sections__data__input.ng-invalid:required{
+    box-shadow:none;
+}
+.cc-wrapper__sections__data__input_paragraf{
+    color: red;
+    margin-top: 5px;
+    font-family: Arial;
+
+}
+.cc-wrapper__sections__img{
+    margin: 0px 15px 0px 15px;
+     cursor: pointer
+}
+.cc-wrapper__button{
+    align-self: center;
+    margin: 30px 0px 30px 0px;
+}
+.cc-wrapper__button__btn{
+   
+    width: 100px;
+    height: 34px;
+    background-color: #40889E;
+    font-size: 16px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer
+}
+
+@media (max-width: 800px) {
+    body {
+        width: 700px;
+        margin: 0px auto;
+    }
+}
+
+@media (max-width: 740px) {
+    body{
+        width: 420px;
+        margin: 0px auto;
+    }
+    .cc-wrapper__sections{
+         flex-direction: column;
+    }
+    .cc-wrapper__sections__img{
+        margin: 10px 0px 10px 0px;
+        align-self: center;
+        transform: rotate(90deg)
+    }
+    .cc-wrapper__sections{
+        width: 90%;
+    }
+    .cc-wrapper__sections__data{
+        width: 100%;
+    }
+    .cc-wrapper__sections__data__input{
+        width: 85%;
+    }
+    .cc-wrapper__button{
+        width: 90%;
+    }
+    .cc-wrapper__button__btn{
+        width: 100%;
+    }
+    .cc-wrapper__title{
+        width: 80%;
+    }
+}

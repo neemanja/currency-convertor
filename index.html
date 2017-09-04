@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="currencyConverter">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Convertor</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers/currConvCtrl.js"></script>
+    </head>
+    <body ng-controller="currConvCtrl">
+        <div class="cc-wrapper">
+            <div class="cc-wrapper__title">
+                <h1>CURRENCY CONVERTOR</h1>
+            </div>
+            <div class="cc-wrapper__sections">
+                <div class="cc-wrapper__sections__data">
+                    <form name="currency1Frm">
+                        <select class="cc-wrapper__sections__data__select" ng-model="selectCurr1.model" ng-change="changeCurrency1(selectCurr1.model)">
+                            <option ng-repeat="option in selectCurr1.availableOptions" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <input class="cc-wrapper__sections__data__input" type="text" name="inputCurr1" ng-model="inputCurr1" ng-change="inputCurr1Change()" ng-pattern="/^[0-9]+\.?[0-9]*$/" required/>
+                        <p class="cc-wrapper__sections__data__input_paragraf" ng-show="currency1Frm.inputCurr1.$error.pattern">Please enter a number</p>
+                    </form>
+                </div>
+                <div class="cc-wrapper__sections__img">
+                    <img src="img/swap.svg"/ ng-click="swap(selectCurr1.model, selectCurr2.model)"/>
+                </div>
+                <div class="cc-wrapper__sections__data">
+                    <form name="currency2Frm">
+                        <select class="cc-wrapper__sections__data__select" ng-model="selectCurr2.model" ng-change="changeCurrency2(selectCurr2.model)">
+                            <option ng-repeat="option in selectCurr2.availableOptions" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <input class="cc-wrapper__sections__data__input" type="text" name="inputCurr2" ng-model="inputCurr2" ng-change="inputCurr2Change(selectCurr1.model, selectCurr2.model)" ng-pattern="/^[0-9]+\.?[0-9]*$/" required/>
+                        <p class="cc-wrapper__sections__data__input_paragraf" ng-show="currency2Frm.inputCurr2.$error.pattern">Please enter a number</p>
+                    </form>
+                </div>
+            </div>
+            <div class="cc-wrapper__button">
+                <button class="cc-wrapper__button__btn" name="resetBtn" ng-click="resetBtn()">Reset</button>
+            </div>
+        </div>
+    </body>
+</html>
